@@ -1,5 +1,5 @@
 # Baseline configuration
-out_dir = 'out-shakespeare-baseline'
+out_dir = '../Experiments/out-shakespeare-baseline'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10

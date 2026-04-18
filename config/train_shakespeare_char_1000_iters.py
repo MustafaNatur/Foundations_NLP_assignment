@@ -1,5 +1,5 @@
 # 1000 Iterations configuration
-out_dir = 'out-shakespeare-1000_iters'
+out_dir = '../Experiments/out-shakespeare-1000_iters'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10
@@ -30,4 +30,3 @@ weight_decay = 1e-1
 
 device = 'cuda'   # change to 'cuda' if you have a GPU
 compile = False   # set True only on Linux with GPU
-
