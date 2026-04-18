@@ -1,5 +1,5 @@
 # 64 Context configuration
-out_dir = 'out-shakespeare-64_context'
+out_dir = '../Experiments/out-shakespeare-64_context'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10
