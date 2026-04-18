@@ -15,7 +15,7 @@ def parse_log_file(log_path):
 
     pattern = re.compile(r"step\s+(\d+):\s+train loss\s+(\d+\.\d+),\s+val loss\s+(\d+\.\d+)")
 
-    with open(log_path, "r") as fileref:
+    with open(log_path, "r", encoding="utf-16") as fileref:
         for line in fileref:
             match = pattern.search(line)
             if match:
