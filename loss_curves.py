@@ -7,6 +7,21 @@ import matplotlib.pyplot as plt
 
 LOG_FILES = ["baseline.log", "dropout0.log"]
 
+LOG_ENCODINGS = ("utf-16", "utf-8", "utf-8-sig")
+
+
+def read_log_lines(log_path):
+    """Return decoded log lines, supporting both legacy and current encodings."""
+    last_error = None
+    for encoding in LOG_ENCODINGS:
+        try:
+            with open(log_path, "r", encoding=encoding) as fileref:
+                return fileref.readlines()
+        except UnicodeError as exc:
+            last_error = exc
+    raise UnicodeError(f"Could not decode log file {log_path}") from last_error
+
+
 def parse_log_file(log_path):
     """Return steps, train losses, and validation losses for one run."""
     steps = []
@@ -15,18 +30,30 @@ def parse_log_file(log_path):
 
     pattern = re.compile(r"step\s+(\d+):\s+train loss\s+(\d+\.\d+),\s+val loss\s+(\d+\.\d+)")
 
-    with open(log_path, "r", encoding="utf-16") as fileref:
-        for line in fileref:
-            match = pattern.search(line)
-            if match:
-                step = match.group(1)
-                train_loss = match.group(2)
-                val_loss = match.group(3)
-                steps.append(int(step))
-                train_losses.append(float(train_loss))
-                val_losses.append(float(val_loss))
+    for line in read_log_lines(log_path):
+        match = pattern.search(line)
+        if match:
+            step = match.group(1)
+            train_loss = match.group(2)
+            val_loss = match.group(3)
+            steps.append(int(step))
+            train_losses.append(float(train_loss))
+            val_losses.append(float(val_loss))
 
     return steps, train_losses, val_losses
+
+
+def parse_runtime_minutes(log_path):
+    """Approximate runtime in minutes from the iteration timing lines in one log."""
+    pattern = re.compile(r"iter\s+\d+:\s+loss\s+\d+\.\d+,\s+time\s+(\d+\.\d+)ms")
+    total_ms = 0.0
+
+    for line in read_log_lines(log_path):
+        match = pattern.search(line)
+        if match:
+            total_ms += float(match.group(1))
+
+    return total_ms / 60000
 
 
 def plot_training_loss(all_runs, output_path="training_loss.png"):
