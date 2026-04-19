@@ -1,5 +1,5 @@
 # 2 Layers configuration
-out_dir = '../Experiments/out-shakespeare-2_layers'
+out_dir = '../Weights/out-shakespeare-2_layers'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10

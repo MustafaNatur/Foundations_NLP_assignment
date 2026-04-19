@@ -29,7 +29,7 @@ def parse_log_file(log_path):
     return steps, train_losses, val_losses
 
 
-def plot_training_loss(all_runs):
+def plot_training_loss(all_runs, output_path="training_loss.png"):
     """Create and save the training-loss figure for all runs."""
     plt.figure(figsize=(10, 6))
     for experiment_name, experiment_value in all_runs.items():
@@ -38,11 +38,11 @@ def plot_training_loss(all_runs):
     plt.ylabel("Training Loss")
     plt.title("Training Loss vs. Step")
     plt.legend()
-    plt.savefig("training_loss.png")
+    plt.savefig(output_path)
     plt.close()
 
 
-def plot_validation_loss(all_runs):
+def plot_validation_loss(all_runs, output_path="validation_loss.png"):
     """Create and save the validation-loss figure for all runs."""
     plt.figure(figsize=(10,6))
     for experiment_name, experiment_value in all_runs.items():
@@ -52,7 +52,7 @@ def plot_validation_loss(all_runs):
     plt.ylabel("Val Loss")
     plt.title("Validation Loss vs. Step")
     plt.legend()
-    plt.savefig("validation_loss.png")
+    plt.savefig(output_path)
     plt.close()
 
 

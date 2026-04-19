@@ -1,5 +1,5 @@
 # Low Learningrate configuration
-out_dir = '../Experiments/out-shakespeare-low_lr'
+out_dir = '../Weights/out-shakespeare-low_lr'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10

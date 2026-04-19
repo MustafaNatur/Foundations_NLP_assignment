@@ -1,5 +1,5 @@
 # 128 width configuration
-out_dir = '../Experiments/out-shakespeare-128_width'
+out_dir = '../Weights/out-shakespeare-128_width'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10

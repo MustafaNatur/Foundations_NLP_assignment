@@ -1,5 +1,5 @@
 # 2500 Iterations configuration
-out_dir = '../Experiments/out-shakespeare-2500_iters'
+out_dir = '../Weights/out-shakespeare-2500_iters'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10
