@@ -1,5 +1,5 @@
-# Pride and Prejudice 256-width configuration
-out_dir = '../Weights/out-pride-prejudice'
+# Pride and Prejudice 128-width configuration
+out_dir = '../Weights/out-pride-prejudice-128_width'
 eval_interval = 250
 eval_iters = 200
 log_interval = 10
@@ -7,7 +7,7 @@ always_save_checkpoint = False
 
 wandb_log = False
 wandb_project = 'nanoGPT-assignment'
-wandb_run_name = 'pride_prejudice'
+wandb_run_name = 'pride_prejudice_128_width'
 
 dataset = 'pride_prejudice_char'
 gradient_accumulation_steps = 1
@@ -16,7 +16,7 @@ block_size = 256
 
 n_layer = 6
 n_head = 4
-n_embd = 256
+n_embd = 128
 dropout = 0.2
 
 learning_rate = 1e-3

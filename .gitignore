@@ -1,6 +1,6 @@
 .DS_Store
 __pycache__/
-/nanoGPT
 /Experiments
 Experiments.zip
 /generated_samples
+/nanoGPT
