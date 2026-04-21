@@ -1,0 +1,205 @@
+Overriding config with ../config/train_pride_prejudice_char_baseline.py:
+# Pride and Prejudice baseline configuration
+out_dir = '../Weights/out-pride-prejudice-baseline'
+eval_interval = 250
+eval_iters = 200
+log_interval = 10
+always_save_checkpoint = False
+
+wandb_log = False
+wandb_project = 'nanoGPT-assignment'
+wandb_run_name = 'pride_prejudice_baseline'
+
+dataset = 'pride_prejudice_char'
+gradient_accumulation_steps = 1
+batch_size = 64
+block_size = 256
+
+n_layer = 6
+n_head = 6
+n_embd = 384
+dropout = 0.2
+
+learning_rate = 1e-3
+max_iters = 1500
+lr_decay_iters = 1500
+min_lr = 1e-4
+beta2 = 0.99
+
+warmup_iters = 100
+weight_decay = 1e-1
+
+device = 'mps'    # Apple Silicon MPS backend for the reduced bonus rerun
+compile = False   # keep False for MPS
+
+tokens per iteration will be: 16,384
+found vocab_size = 65 (inside data/pride_prejudice_char/meta.pkl)
+Initializing a new model from scratch
+number of parameters: 10.65M
+num decayed parameter tensors: 26, with 10,740,096 parameters
+num non-decayed parameter tensors: 13, with 4,992 parameters
+using fused AdamW: False
+step 0: train loss 4.2874, val loss 4.2823
+iter 0: loss 4.2639, time 99644.44ms, mfu -100.00%
+iter 10: loss 3.1459, time 849.16ms, mfu 0.44%
+iter 20: loss 2.7319, time 849.96ms, mfu 0.44%
+iter 30: loss 2.6226, time 856.89ms, mfu 0.44%
+iter 40: loss 2.5756, time 896.22ms, mfu 0.44%
+iter 50: loss 2.5239, time 841.27ms, mfu 0.44%
+iter 60: loss 2.5127, time 847.06ms, mfu 0.44%
+iter 70: loss 2.4897, time 838.06ms, mfu 0.44%
+iter 80: loss 2.4936, time 831.93ms, mfu 0.44%
+iter 90: loss 2.4706, time 851.84ms, mfu 0.44%
+iter 100: loss 2.4636, time 828.51ms, mfu 0.44%
+iter 110: loss 2.4584, time 861.68ms, mfu 0.44%
+iter 120: loss 2.4334, time 877.36ms, mfu 0.44%
+iter 130: loss 2.4130, time 869.01ms, mfu 0.44%
+iter 140: loss 2.4097, time 918.90ms, mfu 0.43%
+iter 150: loss 2.4161, time 887.29ms, mfu 0.43%
+iter 160: loss 2.3750, time 850.90ms, mfu 0.43%
+iter 170: loss 2.3499, time 855.90ms, mfu 0.43%
+iter 180: loss 2.3134, time 848.82ms, mfu 0.43%
+iter 190: loss 2.2485, time 851.51ms, mfu 0.43%
+iter 200: loss 2.2039, time 847.68ms, mfu 0.43%
+iter 210: loss 2.1488, time 865.90ms, mfu 0.43%
+iter 220: loss 2.1379, time 863.04ms, mfu 0.43%
+iter 230: loss 2.0752, time 887.18ms, mfu 0.43%
+iter 240: loss 2.0880, time 877.73ms, mfu 0.43%
+step 250: train loss 1.9632, val loss 2.0662
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 250: loss 2.0330, time 107696.91ms, mfu 0.39%
+iter 260: loss 1.9812, time 914.20ms, mfu 0.39%
+iter 270: loss 1.9784, time 912.69ms, mfu 0.39%
+iter 280: loss 1.9831, time 959.61ms, mfu 0.39%
+iter 290: loss 1.9148, time 925.48ms, mfu 0.39%
+iter 300: loss 1.9108, time 929.59ms, mfu 0.39%
+iter 310: loss 1.8730, time 953.50ms, mfu 0.39%
+iter 320: loss 1.8490, time 891.03ms, mfu 0.40%
+iter 330: loss 1.8199, time 896.28ms, mfu 0.40%
+iter 340: loss 1.7910, time 891.59ms, mfu 0.40%
+iter 350: loss 1.8295, time 934.67ms, mfu 0.40%
+iter 360: loss 1.7707, time 887.05ms, mfu 0.40%
+iter 370: loss 1.7415, time 948.49ms, mfu 0.40%
+iter 380: loss 1.7291, time 913.22ms, mfu 0.40%
+iter 390: loss 1.7277, time 892.08ms, mfu 0.40%
+iter 400: loss 1.7653, time 907.98ms, mfu 0.40%
+iter 410: loss 1.6949, time 963.63ms, mfu 0.40%
+iter 420: loss 1.7127, time 906.25ms, mfu 0.40%
+iter 430: loss 1.6940, time 908.40ms, mfu 0.40%
+iter 440: loss 1.6587, time 926.70ms, mfu 0.40%
+iter 450: loss 1.6591, time 912.45ms, mfu 0.40%
+iter 460: loss 1.6025, time 924.61ms, mfu 0.40%
+iter 470: loss 1.6543, time 930.71ms, mfu 0.40%
+iter 480: loss 1.6222, time 931.78ms, mfu 0.40%
+iter 490: loss 1.6099, time 882.01ms, mfu 0.41%
+step 500: train loss 1.5258, val loss 1.7235
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 500: loss 1.6014, time 112617.54ms, mfu 0.37%
+iter 510: loss 1.6089, time 991.35ms, mfu 0.37%
+iter 520: loss 1.5860, time 949.91ms, mfu 0.37%
+iter 530: loss 1.5613, time 1309.68ms, mfu 0.36%
+iter 540: loss 1.6182, time 3848.12ms, mfu 0.33%
+iter 550: loss 1.5626, time 909.30ms, mfu 0.34%
+iter 560: loss 1.5615, time 840.87ms, mfu 0.35%
+iter 570: loss 1.5676, time 936.03ms, mfu 0.36%
+iter 580: loss 1.5276, time 830.79ms, mfu 0.37%
+iter 590: loss 1.4961, time 828.74ms, mfu 0.37%
+iter 600: loss 1.5217, time 818.63ms, mfu 0.38%
+iter 610: loss 1.5478, time 825.71ms, mfu 0.39%
+iter 620: loss 1.5386, time 827.74ms, mfu 0.40%
+iter 630: loss 1.5104, time 825.93ms, mfu 0.40%
+iter 640: loss 1.4630, time 824.81ms, mfu 0.41%
+iter 650: loss 1.4994, time 828.89ms, mfu 0.41%
+iter 660: loss 1.5020, time 830.97ms, mfu 0.41%
+iter 670: loss 1.4457, time 831.14ms, mfu 0.42%
+iter 680: loss 1.5128, time 835.38ms, mfu 0.42%
+iter 690: loss 1.4635, time 836.89ms, mfu 0.42%
+iter 700: loss 1.4755, time 833.71ms, mfu 0.43%
+iter 710: loss 1.4580, time 836.61ms, mfu 0.43%
+iter 720: loss 1.4391, time 832.66ms, mfu 0.43%
+iter 730: loss 1.4215, time 840.26ms, mfu 0.43%
+iter 740: loss 1.4270, time 841.46ms, mfu 0.43%
+step 750: train loss 1.3595, val loss 1.5849
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 750: loss 1.4195, time 108575.73ms, mfu 0.39%
+iter 760: loss 1.4366, time 926.39ms, mfu 0.39%
+iter 770: loss 1.4231, time 965.82ms, mfu 0.39%
+iter 780: loss 1.4103, time 932.02ms, mfu 0.39%
+iter 790: loss 1.4150, time 956.68ms, mfu 0.39%
+iter 800: loss 1.4243, time 931.79ms, mfu 0.39%
+iter 810: loss 1.3982, time 931.70ms, mfu 0.39%
+iter 820: loss 1.4030, time 921.17ms, mfu 0.39%
+iter 830: loss 1.3946, time 916.83ms, mfu 0.39%
+iter 840: loss 1.3949, time 933.89ms, mfu 0.40%
+iter 850: loss 1.3856, time 937.92ms, mfu 0.40%
+iter 860: loss 1.3813, time 966.18ms, mfu 0.39%
+iter 870: loss 1.3855, time 914.05ms, mfu 0.40%
+iter 880: loss 1.3657, time 923.04ms, mfu 0.40%
+iter 890: loss 1.3745, time 910.00ms, mfu 0.40%
+iter 900: loss 1.3637, time 959.93ms, mfu 0.40%
+iter 910: loss 1.3143, time 905.59ms, mfu 0.40%
+iter 920: loss 1.3545, time 991.41ms, mfu 0.40%
+iter 930: loss 1.3503, time 921.67ms, mfu 0.40%
+iter 940: loss 1.3415, time 930.40ms, mfu 0.40%
+iter 950: loss 1.3413, time 927.34ms, mfu 0.40%
+iter 960: loss 1.3557, time 946.42ms, mfu 0.40%
+iter 970: loss 1.3485, time 916.08ms, mfu 0.40%
+iter 980: loss 1.3527, time 976.17ms, mfu 0.40%
+iter 990: loss 1.3318, time 955.40ms, mfu 0.40%
+step 1000: train loss 1.2625, val loss 1.5193
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 1000: loss 1.3265, time 128548.36ms, mfu 0.36%
+iter 1010: loss 1.3304, time 1018.63ms, mfu 0.36%
+iter 1020: loss 1.3046, time 963.67ms, mfu 0.36%
+iter 1030: loss 1.3284, time 997.54ms, mfu 0.36%
+iter 1040: loss 1.3499, time 960.20ms, mfu 0.36%
+iter 1050: loss 1.2907, time 952.49ms, mfu 0.37%
+iter 1060: loss 1.3275, time 946.67ms, mfu 0.37%
+iter 1070: loss 1.3227, time 1024.85ms, mfu 0.37%
+iter 1080: loss 1.3285, time 949.28ms, mfu 0.37%
+iter 1090: loss 1.3399, time 968.19ms, mfu 0.37%
+iter 1100: loss 1.3045, time 959.55ms, mfu 0.37%
+iter 1110: loss 1.2927, time 986.03ms, mfu 0.37%
+iter 1120: loss 1.2931, time 952.85ms, mfu 0.38%
+iter 1130: loss 1.2880, time 960.04ms, mfu 0.38%
+iter 1140: loss 1.2935, time 940.76ms, mfu 0.38%
+iter 1150: loss 1.2953, time 946.44ms, mfu 0.38%
+iter 1160: loss 1.3290, time 1034.41ms, mfu 0.38%
+iter 1170: loss 1.2930, time 963.00ms, mfu 0.38%
+iter 1180: loss 1.3061, time 979.44ms, mfu 0.38%
+iter 1190: loss 1.2702, time 944.86ms, mfu 0.38%
+iter 1200: loss 1.2797, time 987.24ms, mfu 0.38%
+iter 1210: loss 1.2617, time 969.37ms, mfu 0.38%
+iter 1220: loss 1.2970, time 991.43ms, mfu 0.38%
+iter 1230: loss 1.2923, time 944.68ms, mfu 0.38%
+iter 1240: loss 1.2955, time 973.34ms, mfu 0.38%
+step 1250: train loss 1.2025, val loss 1.4869
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 1250: loss 1.2707, time 118054.10ms, mfu 0.34%
+iter 1260: loss 1.2754, time 1013.86ms, mfu 0.35%
+iter 1270: loss 1.2608, time 979.57ms, mfu 0.35%
+iter 1280: loss 1.2555, time 962.21ms, mfu 0.35%
+iter 1290: loss 1.2942, time 992.35ms, mfu 0.36%
+iter 1300: loss 1.3063, time 964.47ms, mfu 0.36%
+iter 1310: loss 1.2361, time 960.58ms, mfu 0.36%
+iter 1320: loss 1.3032, time 999.74ms, mfu 0.36%
+iter 1330: loss 1.2676, time 940.89ms, mfu 0.37%
+iter 1340: loss 1.3005, time 967.66ms, mfu 0.37%
+iter 1350: loss 1.2518, time 953.65ms, mfu 0.37%
+iter 1360: loss 1.2795, time 972.79ms, mfu 0.37%
+iter 1370: loss 1.2677, time 1010.06ms, mfu 0.37%
+iter 1380: loss 1.2667, time 968.43ms, mfu 0.37%
+iter 1390: loss 1.2536, time 968.99ms, mfu 0.37%
+iter 1400: loss 1.2647, time 1018.73ms, mfu 0.37%
+iter 1410: loss 1.2568, time 974.21ms, mfu 0.37%
+iter 1420: loss 1.2801, time 985.68ms, mfu 0.37%
+iter 1430: loss 1.2520, time 985.23ms, mfu 0.37%
+iter 1440: loss 1.2688, time 976.91ms, mfu 0.38%
+iter 1450: loss 1.2470, time 982.45ms, mfu 0.38%
+iter 1460: loss 1.2582, time 998.60ms, mfu 0.38%
+iter 1470: loss 1.2369, time 991.24ms, mfu 0.38%
+iter 1480: loss 1.2288, time 1022.61ms, mfu 0.37%
+iter 1490: loss 1.2549, time 1079.63ms, mfu 0.37%
+step 1500: train loss 1.1716, val loss 1.4720
+saving checkpoint to ../Weights/out-pride-prejudice-baseline
+iter 1500: loss 1.2039, time 124348.25ms, mfu 0.33%

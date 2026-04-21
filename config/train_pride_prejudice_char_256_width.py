@@ -20,13 +20,13 @@ n_embd = 256
 dropout = 0.2
 
 learning_rate = 1e-3
-max_iters = 5000
-lr_decay_iters = 5000
+max_iters = 1500
+lr_decay_iters = 1500
 min_lr = 1e-4
 beta2 = 0.99
 
 warmup_iters = 100
 weight_decay = 1e-1
 
-device = 'cuda'   # change to 'cuda' if you have a GPU
-compile = False   # set True only on Linux with GPU
+device = 'mps'    # Apple Silicon MPS backend for the reduced bonus rerun
+compile = False   # keep False for MPS
